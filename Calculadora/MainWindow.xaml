@@ -1,0 +1,111 @@
+﻿<Window x:Class="Calculadora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculadora"
+        mc:Ignorable="d"
+        Title="Calculadora" Height="600" Width="400" WindowStartupLocation="CenterScreen">
+
+
+
+
+
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Command" Value="{Binding Path=buttonPressedCommand}"/>
+        </Style>
+
+       
+    </Window.Resources>
+
+
+
+
+    <Grid x:Name="txtResultado">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="110"  />
+            <RowDefinition Height="110"  />
+            <RowDefinition   />
+
+
+        </Grid.RowDefinitions>
+
+
+
+        <TextBlock Name="tbKeyPressedString" Text="{Binding Path=KeyPressedString}" VerticalAlignment="Bottom"
+                   HorizontalAlignment="Right" FontWeight="Bold" FontSize="30"/>
+
+        <TextBlock Name="tbEntered_Number" Text="{Binding Path= Entered_Number}" VerticalAlignment="Bottom"
+                   HorizontalAlignment="Right" FontSize="50" FontWeight="Bold"
+                   Grid.Row="1"/>
+
+
+
+
+
+        <Grid Grid.Row="2" Background="{DynamicResource ButtonBackgroundColor}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnClear" Grid.Column="1" Grid.Row="1" Content="Clr" CommandParameter="Clr" Click="btnClear_Click"/>
+            <Button x:Name="btnPorcento" Grid.Column="3" Grid.Row="1" Content="%" CommandParameter="" Click="btnPorcento_Click"/>
+            <Button x:Name="btnToggleMode" Grid.Column="5" Grid.Row="1" Content="h/d" Click="btnToggleMode_Click"/>
+
+            <Button x:Name="btnDivisao" Grid.Column="7" Grid.Row="1" Content="÷" CommandParameter="/" Click="btnDivisao_Click"/>
+
+            <Button x:Name="btn7" Grid.Column="1" Grid.Row="3" Content="7" CommandParameter="7" Click="btn7_Click"/>
+            <Button x:Name="btn8" Grid.Column="3" Grid.Row="3" Content="8" CommandParameter="8" Click="btn8_Click"/>
+            <Button x:Name="btn9" Grid.Column="5" Grid.Row="3" Content="9" CommandParameter="9" Click="btn9_Click"/>
+            <Button x:Name="btnMultiplicacao" Grid.Column="7" Grid.Row="3" Content="x" CommandParameter="*" Click="btnMultiplicacao_Click"/>
+
+            <Button x:Name="btn4" Grid.Column="1" Grid.Row="5" Content="4" CommandParameter="4" Click="btn4_Click"/>
+            <Button x:Name="btn5" Grid.Column="3" Grid.Row="5" Content="5" CommandParameter="5" Click="btn5_Click"/>
+            <Button x:Name="btn6" Grid.Column="5" Grid.Row="5" Content="6" CommandParameter="6" Click="btn6_Click"/>
+            <Button x:Name="btnSubtracao" Grid.Column="7" Grid.Row="5" Content="-" CommandParameter="-" Click="btnSubtracao_Click"/>
+
+            <Button x:Name="btn1" Grid.Column="1" Grid.Row="7" Content="1" CommandParameter="1" Click="btn1_Click"/>
+            <Button x:Name="btn2" Grid.Column="3" Grid.Row="7" Content="2" CommandParameter="2" Click="btn2_Click"/>
+            <Button x:Name="btn3" Grid.Column="5" Grid.Row="7" Content="3" CommandParameter="3" Click="btn3_Click"/>
+            <Button x:Name="btnAdicao" Grid.Column="7" Grid.Row="7" Content="+" CommandParameter="+" Click="btnAdicao_Click"/>
+
+            <Button x:Name="btn00" Grid.Column="1" Grid.Row="9" Content="00" CommandParameter="00" Click="btn00_Click"/>
+            <Button x:Name="btn0" Grid.Column="3" Grid.Row="9" Content="0" CommandParameter="0" Click="btn0_Click"/>
+            <Button x:Name="btnVirgula" Grid.Column="5" Grid.Row="9" Content="," CommandParameter="," Click="btnVirgula_Click"/>
+            <Button x:Name="btnIgual" Grid.Column="7" Grid.Row="9" Content="=" CommandParameter="=" Click="btnIgual_Click"/>
+
+        </Grid>
+
+
+
+
+    </Grid>
+</Window>
